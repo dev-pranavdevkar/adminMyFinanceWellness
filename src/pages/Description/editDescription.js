@@ -7,18 +7,18 @@ import DialogTitle from '@mui/material/DialogTitle';
 import DialogContent from '@mui/material/DialogContent';
 import DialogActions from '@mui/material/DialogActions';
 import TextareaAutosize from '@mui/material/TextareaAutosize';
-import axios from 'axios';
+
 import axiosInstance from 'src/config/service/axios';
 
 const EditDescription = ({ id }) => {
   const [open, setOpen] = useState(false);
   const [inputValue, setInputValue] = useState('');
-  
+
 
   useEffect(() => {
     if (id) {
-      console.log('klkl',id)
-      // Set the initial value when `id` is available
+      console.log('klkl', id)
+
       setInputValue(id);
     }
   }, [id]);
@@ -40,7 +40,7 @@ const EditDescription = ({ id }) => {
       const response = await axiosInstance.post(`api/editDescription?id=${id}`, {
         name: inputValue,
       });
-      // Handle the response as needed
+
       console.log(response.data);
       handleClose();
     } catch (error) {

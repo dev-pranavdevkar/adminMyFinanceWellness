@@ -34,7 +34,7 @@ export default function AddDescription() {
       const response = await axiosInstance.post('api/addDescription', {
         name: inputValue,
       });
-      // Handle the response as needed
+      
       console.log("This is Data", response.data);
       handleClose();
     } catch (error) {

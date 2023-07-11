@@ -6,7 +6,7 @@ const DeleteDescription = ({ id }) => {
   const handleDelete = async () => {
     try {
       const response = await axios.delete(`http://api.balajient.biz/api/deleteDescriptionById?id=${id}`);
-      // Handle the response as needed
+ 
       console.log(response.data);
     } catch (error) {
       // Handle error

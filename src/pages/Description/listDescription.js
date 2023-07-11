@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axiosInstance from 'src/config/service/axios';
 import 'bootstrap/dist/css/bootstrap.css';
 import EditDescription from './editDescription';
-import DeleteDescription from './deleteDescription';
+
 const DescriptionList = () => {
   const [descriptions, setDescriptions] = useState([]);
 
@@ -41,7 +41,7 @@ const DescriptionList = () => {
                   </div>
                   <div className='card-footer d-flex justify-content-between'>
                    <EditDescription id={description.id} />
-                    <DeleteDescription />
+                  
 
                   </div>
                 </div>
@@ -54,34 +54,8 @@ const DescriptionList = () => {
       ) : (
         <p>No data found</p>
       )}
-      <div className='row>'>
-
-        <div className='col-lg-4'>
-          <div className='h-100 my-3'>
-            <div className='card'>
-              <div className='card-header'>
-                ID
-              </div>
-              <div className='card-body'>
-                Description
-              </div>
-              <div className='card-footer'>
-                Edit Delete
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-      {Array.isArray(descriptions) && descriptions.length ? (
-        <ul>
-          {descriptions.map((description, index) => (
-            <li key={index}>{description.name}</li>
-          ))}
-        </ul>
-      ) : (
-        <p>No data found</p>
-      )}
+    
+      
     </div>
   );
 };
